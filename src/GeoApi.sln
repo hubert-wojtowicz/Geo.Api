@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{D93DC07A-0F08-4C6D-95FE-AA38F52BF2E5}"
+	ProjectSection(SolutionItems) = preProject
+		Distance between two points-analysis.docx = Distance between two points-analysis.docx
+		..\README.md = ..\README.md
+		sina-is-a-approximation.xlsx = sina-is-a-approximation.xlsx
+		task.docx = task.docx
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoApi.WebApi", "GeoApi.WebApi\GeoApi.WebApi.csproj", "{FEEF75D4-05E2-44AD-B0DC-4E8318D2E099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoApi.Domain", "..\GeoApi.Domain\GeoApi.Domain.csproj", "{CD61C493-AFFE-4694-8ACA-620760028AC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoApi.Application", "..\GeoApi.Application\GeoApi.Application.csproj", "{210BBC08-124B-4410-80FC-4511D4CDF794}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEEF75D4-05E2-44AD-B0DC-4E8318D2E099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEEF75D4-05E2-44AD-B0DC-4E8318D2E099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEEF75D4-05E2-44AD-B0DC-4E8318D2E099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEEF75D4-05E2-44AD-B0DC-4E8318D2E099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD61C493-AFFE-4694-8ACA-620760028AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD61C493-AFFE-4694-8ACA-620760028AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD61C493-AFFE-4694-8ACA-620760028AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD61C493-AFFE-4694-8ACA-620760028AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210BBC08-124B-4410-80FC-4511D4CDF794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210BBC08-124B-4410-80FC-4511D4CDF794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210BBC08-124B-4410-80FC-4511D4CDF794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210BBC08-124B-4410-80FC-4511D4CDF794}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBE0EC40-E283-4759-BB0C-3772218A56A9}
+	EndGlobalSection
+EndGlobal
