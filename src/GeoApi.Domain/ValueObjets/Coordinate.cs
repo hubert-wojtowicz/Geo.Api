@@ -10,7 +10,7 @@ namespace GeoApi.Domain.ValueObjets
             {
                 throw new DomainArgumentException($"Latitude coordinate has incorrect value '{latitiude}' - grater than 90 degree.", nameof(latitiude));
             }
-            if (Math.Abs(longitude) > 190)
+            if (Math.Abs(longitude) > 180)
             {
                 throw new DomainArgumentException($"Longitude coordinate has incorrect value '{latitiude}' - grater than 180 degree.", nameof(latitiude));
             }
