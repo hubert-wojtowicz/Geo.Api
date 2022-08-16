@@ -1,4 +1,7 @@
+using FluentValidation;
+using Geo.Api.Controllers.Models;
 using GeoApi.Application;
+using GeoApi.WebApi.Controllers.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEarthCalculationApplicationService, EarthCalculationApplicationService>();
+builder.Services.AddScoped<IValidator<EarthSurfaceDistanceRequest>, EarthSurfaceDistanceRequestValidator>();
 
 var app = builder.Build();
 

@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Geo.Api.Controllers.Models;
 using GeoApi.WebApi.Controllers.Models;
 using GeoApi.WebApi.IntegrationTests.Helpers;
 using Microsoft.Extensions.Configuration;
@@ -32,9 +33,8 @@ namespace GeoApi.WebApi.IntegrationTests
                 LongitudeA = -6.372663,
                 LatitudeB = 41.385101,
                 LongitudeB = 81.440440
-            };
-            var path = $"api/v1/Earth/surfaceDistanse/​{request.LatitudeA}​/{request.LongitudeA}​/{request.LatitudeB}​/{request.LongitudeB}";
-            var (code, response) = await _requestHelper.GetRequestAsync<EarthSurfaceDistanceResponse>(client, path);
+            }; 
+            var (code, response) = await _requestHelper.PostRequestAsync<EarthSurfaceDistanceRequest, EarthSurfaceDistanceResponse>(client, "api/v1/Earth/surfaceDistanse", request);
 
             response.Should().NotBeNull();
             response.DistanceKm.Should().BeApproximately(6318, ExpectedCalculationAccuracyKm);
@@ -56,11 +56,11 @@ namespace GeoApi.WebApi.IntegrationTests
                 LatitudeB = 41.385101,
                 LongitudeB = 81.440440
             };
-            var path = $"api/v1/Earth/surfaceDistanse/​{request.LatitudeA}​/{request.LongitudeA}​/{request.LatitudeB}​/{request.LongitudeB}";
-            var (code, response) = await _requestHelper.GetRequestAsync<EarthSurfaceDistanceResponse>(client, path);
+            var (code, response) = await _requestHelper.PostRequestAsync<EarthSurfaceDistanceRequest, ErrorResponse>(client, "api/v1/Earth/surfaceDistanse", request);
 
             response.Should().NotBeNull();
-            code.Should().Be(System.Net.HttpStatusCode.NotFound);
+            response.Messages.Should().HaveCount(1);
+            code.Should().Be(System.Net.HttpStatusCode.BadRequest);
         }
 
         private HttpClient BuildShopperMessageManagementApiHttpClient()
