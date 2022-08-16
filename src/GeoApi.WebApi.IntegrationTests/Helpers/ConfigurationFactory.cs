@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+
 namespace GeoApi.WebApi.IntegrationTests.Helpers
 {
     public static class ConfigurationFactory
