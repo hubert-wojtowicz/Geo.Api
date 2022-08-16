@@ -7,7 +7,7 @@ namespace Geo.Api.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]
-public class EarthController : ControllerBase
+public partial class EarthController : ControllerBase
 {
     private readonly ILogger<EarthController> _logger;
     private readonly IEarthCalculationApplicationService _earthCalculationApplicationService;

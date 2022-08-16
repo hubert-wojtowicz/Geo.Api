@@ -12,7 +12,7 @@ namespace GeoApi.Domain
         {
             if (sphereRadius < 0)
             {
-                throw new DomainArgumentException("Sphere value can not be nagative.", nameof(sphereRadius));
+                throw new DomainArgumentException("Sphere value must be grater than zero.", nameof(sphereRadius));
             }
 
             _sphereRadius = sphereRadius;
@@ -24,7 +24,7 @@ namespace GeoApi.Domain
             double b = (90d - A.Latitiude).ToRadians();
             double phi = (A.Longitude - B.Longitude).ToRadians();
             double component = Math.Cos(a) * Math.Cos(b) + Math.Sin(a) * Math.Sin(b) * Math.Cos(phi);
-            return _sphereRadius * Math.Sqrt(2d * (1 - component));
+            return _sphereRadius * Math.Acos(component);
         }
     }
 }

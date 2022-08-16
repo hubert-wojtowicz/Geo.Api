@@ -1,4 +1,4 @@
-# Geo.Api
+﻿# Geo.Api
 
 Api for geographical calculation.
 
@@ -9,11 +9,11 @@ Api for geographical calculation.
 Program accepts gegraphical coordinates and produce response with distance between them. 
 For eample:
 ```
-GET ~/api/v1/GeoDistance/latA/53.297975/longA/-6.372663/latB/41.385101/longB/-81.440440?unit=km
+GET ~​/api​/v1​/Earth​/surfaceDistanse​/{latitudeA}​/{longitudeA}​/{latitudeB}​/{longitudeB}
 ```
 Will produce HTTP 200 with following body:
 ```json
 {
-  "distance": 5535.28
+  "distance": <double>
 }
 ```
