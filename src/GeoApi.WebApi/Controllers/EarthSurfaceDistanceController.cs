@@ -25,7 +25,7 @@ public partial class EarthController : ControllerBase
     /// </summary>
     /// <param name="request">A and B point coordinates.</param>
     /// <returns></returns>
-    [HttpGet("surfaceDistanse/{latitudeA:range(-90,90)}/{longitudeA:range(-180,180)}/{latitudeB:range(-90,90)}/{longitudeB:range(-180,180)}")]
+    [HttpGet("surfaceDistanse/{latitudeA}/{longitudeA}/{latitudeB}/{longitudeB}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EarthSurfaceDistanceResponse))]
     public ActionResult<EarthSurfaceDistanceResponse> SphereDistanceController([FromRoute] EarthSurfaceDistanceRequest request)
     {
