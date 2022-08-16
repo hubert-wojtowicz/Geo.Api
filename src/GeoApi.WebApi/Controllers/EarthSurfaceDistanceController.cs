@@ -20,15 +20,20 @@ public class EarthController : ControllerBase
         _earthCalculationApplicationService = earthCalculationApplicationService;
     }
 
+    /// <summary>
+    /// Returns approximate earth surface distance calculated with sphere model.
+    /// </summary>
+    /// <param name="request">A and B point coordinates.</param>
+    /// <returns></returns>
     [HttpGet("surfaceDistanse/{latitudeA:range(-90,90)}/{longitudeA:range(-180,180)}/{latitudeB:range(-90,90)}/{longitudeB:range(-180,180)}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EarthSurfaceDistanceResponse))]
-    public ActionResult<EarthSurfaceDistanceResponse> SphereDistanceController(double latitudeA, double longitudeA, double latitudeB, double longitudeB)
+    public ActionResult<EarthSurfaceDistanceResponse> SphereDistanceController([FromRoute] EarthSurfaceDistanceRequest request)
     {
         Coordinate A, B;
         try
         {
-            A = new(latitudeA, longitudeA);
-            B = new(latitudeB, longitudeB);
+            A = new(request.LatitudeA, request.LongitudeA);
+            B = new(request.LatitudeB, request.LongitudeB);
         }
         catch (Exception e)
         {
