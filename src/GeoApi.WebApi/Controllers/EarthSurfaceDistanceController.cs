@@ -20,7 +20,7 @@ public class EarthController : ControllerBase
         _earthCalculationApplicationService = earthCalculationApplicationService;
     }
 
-    [HttpGet("surfaceDistanse/{latitudeA}/{longitudeA}/{latitudeB}/{longitudeB}")]
+    [HttpGet("surfaceDistanse/{latitudeA:range(-90,90)}/{longitudeA:range(-180,180)}/{latitudeB:range(-90,90)}/{longitudeB:range(-180,180)}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EarthSurfaceDistanceResponse))]
     public ActionResult<EarthSurfaceDistanceResponse> SphereDistanceController(double latitudeA, double longitudeA, double latitudeB, double longitudeB)
     {
